@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+{% load static tailwind_tags %}
+<head>
+    <meta charset="UTF-8">
+    <title>{% block titre %}ESATIC CONCOURS{% endblock %}</title>
+    {% tailwind_css %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.12.0/cdn.min.js" defer></script>
+    <style>
+        body {
+            background-color: #fff0f5;
+            font-family: 'Poppins', sans-serif;
+        }
+        .form-container {
+            background-image: linear-gradient(to bottom right, rgba(255,255,255,0.9), rgba(255,192,203,0.1));
+            backdrop-filter: blur(10px);
+        }
+        .input-field {
+            transition: all 0.3s ease;
+            border-radius: 8px;
+        }
+        .input-field:focus {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(253, 162, 192, 0.3);
+        }
+        .submit-btn {
+            background-image: linear-gradient(to right, #ff758c, #ff7eb3);
+        }
+        .submit-btn:hover {
+            background-image: linear-gradient(to right, #ff7eb3, #ff758c);
+        }
+        .success-message {
+            animation: slideIn 0.5s ease-out forwards;
+        }
+        @keyframes slideIn {
+            0% {
+                transform: translateY(-20px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-800">
+    {% block content %}
+    {% endblock %}
+</body>
+</html>
